@@ -1,4 +1,5 @@
 pub mod prelude;
-pub mod object;
-pub mod rect;
-pub mod circle;
+pub mod objects;
+pub mod rects;
+pub mod lines;
+pub mod circles;

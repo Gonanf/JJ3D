@@ -1,17 +1,7 @@
 use sdl2::{event::Event, keyboard::Keycode, libc::sleep, pixels::Color, rect::Point, render::Canvas, video::Window};
-use crate::core::lines::CreateLine;
-
-
-pub trait Shape {
-    fn draw(&mut self);
-}
-
-pub struct ShapeObject<'a> {
-    canvas: &'a mut Canvas<Window>,
-    position: Point,
-    transform: Point,
-    rotation: i8
-}
+use super::lines::CreateLine;
+use super::objects::ShapeObject;
+use super::prelude::*;
 
 pub struct Rect<'a,const N: usize> {
     object: ShapeObject<'a>,
@@ -39,9 +29,4 @@ impl<'a,const N: usize> Rect<'a,N> {
             points: points
         }
     }
-}
-
-pub struct Circle<'a> {
-    object: ShapeObject<'a>,
-    radio: i32
 }
